@@ -20,8 +20,10 @@ void test_validate_my_username()
      */
 	
 	const char* myUsername = my_username();
-	const char* malUsername = malloc_username_from_conf_file();
+	char* malUsername = malloc_username_from_conf_file();
 
 	TEST_ASSERT_EQUAL_STRING_MESSAGE(myUsername, malUsername, "something went wrong");
+
+	free(malUsername);
 
 }
